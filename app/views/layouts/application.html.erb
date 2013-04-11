@@ -5,12 +5,237 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+<script type="text/javascript">
+//<![CDATA[
+try{if (!window.CloudFlare) { var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",mirage:{responsive:0,lazy:0},oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/abv=2692629090/"},atok:"c3f036e9309288d1a81aa7559db80f83",zone:"template-help.com",rocket:"a",apps:0}];document.write('<script type="text/javascript" src="//ajax.cloudflare.com/cdn-cgi/nexp/abv=2562784428/cloudflare.min.js"><'+'\/script>')}}catch(e){};
+//]]>
+</script>
+<script type="text/rocketscript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);</script>
+<title>Authentication - Stationery</title>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+<meta name="generator" content="PrestaShop"/>
+<meta name="robots" content="index,follow"/>
+<link rel="icon" type="image/vnd.microsoft.icon" href="assets/favicon.ico"/>
+<link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico"/>
+
+<script type="text/rocketscript">
+		var baseDir = 'http://livedemo00.template-help.com/prestashop_37970/';
+		var static_token = '0f2c2fc31bac8e671e5384f2897a3721';
+		var token = 'e3ad06031261cb7be74c474c5220c11f';
+		var priceDisplayPrecision = 2;
+		var priceDisplayMethod = 1;
+		var roundMode = 2;
+	</script>
+
 </head>
-<body>
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+<body id="authentication">
+
+<div id="wrapper1">
+<div id="wrapper2">
+<div id="wrapper3">
+ 
+<div id="header">
+<a id="header_logo" href="/home" title="Stationery">
+<%= image_tag "logo.jpg", :class => "logo" %>
+</a>
+<div class="header-line"></div>
+<div id="header_right">
+ 
+<div id="languages_block_top">
+<ul id="first-languages">
+<li class="selected_language">
+<%= image_tag "1.jpg", :alt => "en", :width => "16", :height=>"11" %>
+</li>
+<li>
+<a href="http://livedemo00.template-help.com/prestashop_37970/authentication.php?back=my-account.php&amp;id_lang=2" title="Français (French)">
+<%= image_tag "2.jpg", :alt => "fr", :width => "16", :height=>"11" %>
+</a>
+</li>
+<li>
+<a href="http://livedemo00.template-help.com/prestashop_37970/authentication.php?back=my-account.php&amp;id_lang=3" title="Español (Spanish)">
+<%= image_tag "3.jpg", :alt => "es", :width => "16", :height=>"11" %>
+</a>
+</li>
+</ul>
+</div>
+<script type="text/rocketscript">
+	$('ul#first-languages li:not(.selected_language)').css('opacity', 1);
+	$('ul#first-languages li:not(.selected_language)').hover(function(){
+		$(this).css('opacity', 1);
+	}, function(){
+		$(this).css('opacity', 1);
+	});
+</script>
+ 
+ 
+<div id="currencies_block_top">
+<form id="setCurrency" action="/prestashop_37970/authentication.php?back=my-account.php" method="post">
+<label>Currency:</label>
+<select onchange="setCurrency(this.value);">
+<option value="2" selected="selected">Dollar</option>
+<option value="1">Euro</option>
+<option value="3">Pound</option>
+</select>
+<input type="hidden" name="id_currency" id="id_currency" value=""/>
+<input type="hidden" name="SubmitCurrency" value=""/>
+</form>
+</div>
+  
+<div id="search_block_top">
+<form method="get" action="http://livedemo00.template-help.com/prestashop_37970/search.php" id="searchbox">
+<label>Search</label>
+<input class="search_query" type="text" id="search_query_top" name="search_query" value="Search" onFocus="if(this.value=='Search')this.value='';" onBlur="if(this.value=='')this.value='Search';"/>
+<a href="javascript:document.getElementById('searchbox').submit();">Go!</a>
+<input type="hidden" name="orderby" value="position"/>
+<input type="hidden" name="orderway" value="desc"/>
+</form>
+</div>
+ <ul id="tmheaderlinks">
+<li><%= link_to "Home", home_index_path %></li>
+<li><%= link_to "Specials", home_specials_path %></li>
+<li><%= link_to "Sitemap", home_sitemap_path %></li>
+<li><%= link_to "Contact", contact_path %></li>
+</ul> 
+<div id="header_user">
+<ul>
+<li id="header_user_info">
+Welcome,
+(&nbsp;<%= link_to "Log in", login_index_path %> &nbsp;)
+</li>
+<li id="your_account"><%= link_to "Your Account", login_my_account_path %></li>
+<li id="shopping_cart">
+<%= link_to "Cart:", home_order_path %>
+<span class="ajax_cart_quantity">2</span>
+<span class="ajax_cart_product_txt hidden">product</span>
+<span class="ajax_cart_product_txt_s">products</span>
+<span class="ajax_cart_no_product hidden">empty</span>
+</li>
+</ul>
+</div>
+  
+<div class="tmbanner1">
+<a href="/product/action?id_product=1" title="free shipping">
+<%= image_tag "advertising.jpg", :title => "free shipping", :alt=>  "free shipping" %>
+</a>
+</div>
+ 
+</div>
+</div>
+<div id="columns">
+ 
+<div id="left_column" class="column"></div>
 
 <%= yield %>
+
+<div id="right_column" class="column">
+ 
+<div id="categories_block_left" class="block">
+<h4>Categories</h4>
+<div class="block_content">
+<ul class="tree dhtml">
+<li>
+<a href="http://livedemo00.template-help.com/prestashop_37970/category.php?id_category=2" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sagittis arcu non orci hendrerit in imperdiet lectus molestie. Curabitur adipiscing felis arcu, at gravida velit. Sed quis neque sed nibh sagittis lobortis vel nec lacus. Sed ut fermentum risus. Sed at libero sed sapien blandit adipiscing. Aliquam tempor venenatis magna, ac consequat nunc accumsan id.">Abacus</a>
+<ul>
+<li>
+<a href="http://livedemo00.template-help.com/prestashop_37970/category.php?id_category=10" title="Sodales id felis. Nullam lacinia nibh ac nibh interdum sit amet varius purus imperdiet. Donec mauris enim, lobortis eget molestie id, suscipit eget urna. Sed congue leo nec ligula placerat pellentesque ut non quam. Sed sollicitudin tortor quis tortor porttitor et molestie massa pellentesque. Proin congue convallis iaculis. Maecenas scelerisque turpis in velit condimentum semper rutrum.">Adipiscing</a>
+</li>
+<li>
+<a href="http://livedemo00.template-help.com/prestashop_37970/category.php?id_category=11" title="Duis interdum tristique mi eu pellentesque. Proin quis lacus purus. Suspendisse adipiscing massa non nibh tristique tincidunt. Morbi metus dolor, luctus ac consequat id, condimentum id mauris. Fusce posuere molestie sagittis. Suspendisse id sodales velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae">Digniss</a>
+</li>
+<li class="last">
+<a href="http://livedemo00.template-help.com/prestashop_37970/category.php?id_category=12" title="Vestibulum posuere tincidunt nulla, id euismod lorem sagittis at. Etiam viverra ullamcorper diam, eget tempus nulla venenatis sed. Nunc volutpat, lacus sed consectetur tempor, nulla elit dapibus dui, et tempor urna est et ante. Etiam quis feugiat mi. Nulla facilisi. Pellentesque id ultrices risus. Etiam sollicitudin tincidunt adipiscing. Class aptent taciti sociosqu ad litora.">Aenean</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="http://livedemo00.template-help.com/prestashop_37970/category.php?id_category=3" title="Curabitur interdum tellus vel massa sodales at sagittis ante imperdiet. Cras eget velit ac dui dignissim dictum. Pellentesque fringilla condimentum rhoncus. Nam vel arcu sed mauris eleifend dignissim. Aenean varius nisl malesuada massa ultrices aliquet. Mauris aliquam diam sit amet mauris suscipit egestas. Vestibulum sagittis tortor sed nunc cursus blandit.">Adhesive</a>
+</li>
+<li>
+<a href="http://livedemo00.template-help.com/prestashop_37970/category.php?id_category=4" title="Tortor quam pulvinar sapien, sit amet fringilla nulla odio nec arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris faucibus orci sit amet diam adipiscing interdum. Pellentesque pretium placerat diam, sed condimentum nisi tincidunt eget. Ut porttitor gravida metus, vel vehicula magna interdum vitae. Ut volutpat placerat tellus.">Ballpoint Pen</a>
+</li>
+<li>
+<a href="http://livedemo00.template-help.com/prestashop_37970/category.php?id_category=5" title="Pellentesque porta luctus magna, eget tincidunt leo consequat quis. Nulla facilisi. Sed dapibus luctus augue in porta. Aenean at mauris diam. Nunc lacus ipsum, malesuada et lacinia et, consequat eu mi. Sed a magna vel magna rutrum pharetra. Duis nulla eros, rhoncus et placerat eu, congue id augue. Integer vitae ante ac magna gravida sodales. Donec eget augue nunc, sed porttitor dolor.">Binder Clips</a>
+</li>
+<li>
+<a href="http://livedemo00.template-help.com/prestashop_37970/category.php?id_category=6" title="Ssit amet tristique dui. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse arcu nibh, vulputate eu ullamcorper vel, dictum sit amet nibh. Duis vel dictum justo. Nullam eget turpis lacus. Integer in lacus sapien, vitae interdum sem. Pellentesque nulla est, aliquet facilisis condimentum non, egestas at lectus. Duis vulputate accumsan ipsum.">Blades &amp; Cutters</a>
+</li>
+<li>
+<a href="http://livedemo00.template-help.com/prestashop_37970/category.php?id_category=7" title="Pellentesque lacinia ultricies tempor. Nam nec lorem nibh. Aenean consectetur, purus quis elementum commodo, nisi orci auctor odio, ac gravida mi mauris quis arcu. Aliquam aliquam posuere gravida. Nam erat ante, laoreet non sagittis quis. Etiam dolor leo, fermentum quis ornare quis, dictum eu leo. Quisque lacinia augue et lacus rhoncus consectetur. Phasellus ut sem nisi, vitae fermentum metus.">Bookends</a>
+</li>
+<li>
+<a href="http://livedemo00.template-help.com/prestashop_37970/category.php?id_category=8" title="Vivamus ante ante, laoreet sit amet accumsan non, imperdiet quis libero. Aliquam suscipit tristique nibh ac egestas. Pellentesque ultrices egestas nunc, eget fermentum metus aliquet a. Praesent lectus arcu, posuere ac ultrices mattis, feugiat ut dui. Phasellus elementum odio vel sem placerat at ullamcorper augue tincidunt. Donec tempor ante quis urna malesuada pretium.">Calling Bell</a>
+</li>
+<li class="last">
+<a href="http://livedemo00.template-help.com/prestashop_37970/category.php?id_category=9" title="Vivamus ante ante, laoreet sit amet accumsan non, imperdiet quis libero. Aliquam suscipit tristique nibh ac egestas. Pellentesque ultrices egestas nunc, eget fermentum metus aliquet a. Praesent lectus arcu, posuere ac ultrices mattis, feugiat ut dui. Phasellus elementum odio vel sem placerat at ullamcorper augue tincidunt. Donec tempor ante quis urna malesuada pretium.">Chalks</a>
+</li>
+</ul>
+<script type="text/rocketscript">
+		// <![CDATA[
+			// we hide the tree only if JavaScript is activated
+			$('div#categories_block_left ul.dhtml').hide();
+		// ]]>
+		</script>
+</div>
+</div>
+ 
+</div>
+<div class="clearblock"></div>
+</div>
+</div>
+ 
+<div id="footer_wrapper">
+<div id="footer">
+<div id="tmfooterlinks">
+<div>
+<h4>Information</h4>
+<ul>
+<li><a href="http://livedemo00.template-help.com/prestashop_37970/contact-form.php">Contact</a></li>
+<li><a href="http://livedemo00.template-help.com/prestashop_37970/cms.php?id_cms=1">Delivery</a></li>
+<li><a href="http://livedemo00.template-help.com/prestashop_37970/cms.php?id_cms=2">Legal Notice</a></li>
+<li><a href="http://livedemo00.template-help.com/prestashop_37970/cms.php?id_cms=3">Terms and conditions</a></li>
+<li><a href="http://livedemo00.template-help.com/prestashop_37970/cms.php?id_cms=4">About us</a></li>
+</ul>
+</div>
+<div>
+<h4>Our offers</h4>
+<ul>
+<li><a href="http://livedemo00.template-help.com/prestashop_37970/new-products.php">New products</a></li>
+<li><a href="http://livedemo00.template-help.com/prestashop_37970/best-sales.php">Top sellers</a></li>
+<li><a href="http://livedemo00.template-help.com/prestashop_37970/prices-drop.php">Specials</a></li>
+<li><a href="http://livedemo00.template-help.com/prestashop_37970/manufacturer.php">Manufacturers</a></li>
+<li><a href="http://livedemo00.template-help.com/prestashop_37970/supplier.php">Suppliers</a></li>
+</ul>
+</div>
+<div>
+<h4>Your Account</h4>
+<ul>
+<li><a href="http://livedemo00.template-help.com/prestashop_37970/my-account.php">Your Account</a></li>
+<li><a href="http://livedemo00.template-help.com/prestashop_37970/identity.php">Personal information</a></li>
+<li><a href="http://livedemo00.template-help.com/prestashop_37970/addresses.php">Addresses</a></li>
+<li><a href="http://livedemo00.template-help.com/prestashop_37970/discount.php">Discount</a></li>
+<li><a href="http://livedemo00.template-help.com/prestashop_37970/history.php">Order history</a></li>
+</ul>
+</div>
+<p>&copy; 2012 Powered by <a href="http://www.prestashop.com">PrestaShop</a>&trade;. All rights reserved</p>
+</div>
+ 
+<div id="newsletter_block_left" class="block">
+<h4>Newsletter</h4>
+<div class="block_content">
+<form action="http://livedemo00.template-help.com/prestashop_37970/" method="post">
+<p><input type="text" name="email" size="18" value="your e-mail" onfocus="javascript:if(this.value=='your e-mail')this.value='';" onblur="javascript:if(this.value=='')this.value='your e-mail';"/></p>
+<p>
+<input type="submit" value="ok" class="button_mini" name="submitNewsletter"/>
+</p>
+</form>
+</div>
+</div>
+ 
+</div>
+</div>
+</div>
+</div>
+<script type="text/rocketscript">if(!NREUMQ.f){NREUMQ.f=function(){NREUMQ.push(["load",new Date().getTime()]);var e=document.createElement("script");e.type="text/javascript";e.src=(("http:"===document.location.protocol)?"http:":"https:")+"//"+"d1ros97qkrwjf5.cloudfront.net/42/eum/rum.js";document.body.appendChild(e);if(NREUMQ.a)NREUMQ.a();};NREUMQ.a=window.onload;window.onload=NREUMQ.f;};NREUMQ.push(["nrfj","beacon-1.newrelic.com","72d7dcce33","1388850","ZV1TZ0FTVkFVWkwKXlwXZEFaHRI=",0,4204,new Date().getTime(),"33a82886d75e11ee","1c8908098b313268","","",""]);</script>
 
 </body>
 </html>

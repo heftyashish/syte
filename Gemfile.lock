@@ -117,6 +117,7 @@ DEPENDENCIES
   devise (= 2.0)
   jquery-rails
   json
+  mail
   rails (= 3.2.10)
   sass-rails (~> 3.2.3)
   sqlite3

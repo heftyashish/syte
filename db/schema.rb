@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130402201111) do
+ActiveRecord::Schema.define(:version => 20130411034756) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -30,10 +30,35 @@ ActiveRecord::Schema.define(:version => 20130402201111) do
   add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
   add_index "admins", ["reset_password_token"], :name => "index_admins_on_reset_password_token", :unique => true
 
-  create_table "users", :force => true do |t|
-    t.string   "name"
+  create_table "sessions", :force => true do |t|
+    t.string   "session_id", :null => false
+    t.text     "data"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
+  add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
+
+  create_table "users", :force => true do |t|
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "email"
+    t.string   "password"
+    t.string   "company"
+    t.string   "address"
+    t.string   "city"
+    t.integer  "zip"
+    t.integer  "country"
+    t.string   "info"
+    t.string   "alias_address"
+    t.integer  "home_phone"
+    t.integer  "mobile_phone"
+    t.integer  "months"
+    t.string   "date"
+    t.integer  "gender"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
 end

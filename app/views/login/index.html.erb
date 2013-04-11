@@ -1,0 +1,69 @@
+<div id="center_column" class="center_column">
+ 
+<div class="breadcrumb">
+<div class="breadcrumb_inner">
+<a href="http://livedemo00.template-help.com/prestashop_37970/" title="return to Home">Home</a><span class="navigation-pipe">&gt;</span><span class="navigation_page">Login</span></div>
+</div>
+ <script type="text/javascript">
+// <![CDATA[
+idSelectedCountry = false;
+countries = new Array();
+countriesNeedIDNumber = new Array();
+countriesNeedZipCode = new Array();
+$(function(){
+	$('.id_state option[value=]').attr('selected', 'selected');
+});
+//]]>
+</script>
+<h1>Log in</h1>
+ 
+<ul class="step" id="order_step">
+<li class="step_done">
+<a href="http://livedemo00.template-help.com/prestashop_37970/order.php?back=my-account.php">Summary</a>
+</li>
+<li class="step_current">
+Login
+</li>
+<li class="step_todo">
+Address
+</li>
+<li class="step_todo">
+Shipping
+</li>
+<li id="step_end" class="step_todo">
+Payment
+</li>
+</ul>
+
+<form action="/login/authentication" method="post" id="create-account_form" class="std">
+<fieldset>
+<h3>Create your account</h3>
+<p class="text">
+</p>
+<p class="submit">
+<input type="hidden" class="hidden" name="back" value="my-account.php"/> <input type="submit" id="SubmitCreate" name="SubmitCreate" class="button_large" value="Create your account"/>
+<input type="hidden" class="hidden" name="SubmitCreate" value="Create your account"/>
+</p>
+</fieldset>
+</form>
+
+
+<form action="/login/enter" method="post" id="login_form" class="std">
+<fieldset>
+<h3>Already registered?</h3>
+<p class="text">
+<label for="email">E-mail address</label>
+<input type="text" id="email" name="email" value="" class="account_input"/>
+</p>
+<p class="text">
+<label for="passwd">Password</label>
+<input type="password" id="passwd" name="passwd" value="" class="account_input"/>
+</p>
+<p class="submit">
+<input type="hidden" class="hidden" name="back" value="my-account.php"/> <input type="submit" id="SubmitLogin" name="SubmitLogin" class="button" value="Log in"/>
+</p>
+<p class="lost_password"><a href="http://livedemo00.template-help.com/prestashop_37970/password.php">Forgot your password?</a></p>
+</fieldset>
+</form>
+<div class="clearblock"></div>
+</div>

@@ -1,7 +1,16 @@
 Syte::Application.routes.draw do
+  match "/login/my_account" => "login#my_account"
+  match "/login/authentication" => "login#authentication"
+  match "/login/enter" => "login#enter"
+  match "/contact" => "home#contact"
+  match "/home/specials" => "home#specials"
+  match "/home/sitemap" => "home#sitemap"
+  match "/home/order" => "home#order"
   devise_for :admins
 
   resources :users
+  resources :home
+  resources :login
 
 
   # The priority is based upon order of creation:
@@ -53,7 +62,7 @@ Syte::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'users#index'
+  root :to => 'home#index'
 
   # See how all your routes lay out with "rake routes"
 

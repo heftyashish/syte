@@ -1,8 +1,8 @@
 # Be sure to restart your server when you modify this file.
 
-Syte::Application.config.session_store :cookie_store, :key => '_syte_session'
+# Syte::Application.config.session_store :cookie_store, :key => '_syte_session'
 
 # Use the database for sessions instead of the cookie-based default,
 # which shouldn't be used to store highly confidential information
 # (create the session table with "rails generate session_migration")
-# Syte::Application.config.session_store :active_record_store
+Syte::Application.config.session_store :active_record_store
