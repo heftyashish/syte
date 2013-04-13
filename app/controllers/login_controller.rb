@@ -1,7 +1,6 @@
 class LoginController < ApplicationController
 
 	def index
-		
 	end
 
 	def enter
@@ -9,7 +8,7 @@ class LoginController < ApplicationController
 		if @user.empty?
 			redirect_to login_index_path
 		else
-			# session[:admin]=params[:username]
+			session[:user]=params[:firstname]
 			render 'my_account.html.erb'
 		end
 	end
@@ -34,6 +33,7 @@ class LoginController < ApplicationController
 
 		@user= User.new(params)
 		@user.save!
+		session[:user]=params[:firstname]
 		# UserMailer.welcome_email(@user).deliver
 		rescue ActiveRecord::RecordInvalid => e
 		 flash[:notice]=@user.errors.full_messages

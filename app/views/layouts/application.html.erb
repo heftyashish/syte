@@ -47,12 +47,12 @@ try{if (!window.CloudFlare) { var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",mi
 <%= image_tag "1.jpg", :alt => "en", :width => "16", :height=>"11" %>
 </li>
 <li>
-<a href="http://livedemo00.template-help.com/prestashop_37970/authentication.php?back=my-account.php&amp;id_lang=2" title="Français (French)">
+<a href="">
 <%= image_tag "2.jpg", :alt => "fr", :width => "16", :height=>"11" %>
 </a>
 </li>
 <li>
-<a href="http://livedemo00.template-help.com/prestashop_37970/authentication.php?back=my-account.php&amp;id_lang=3" title="Español (Spanish)">
+<a href="">
 <%= image_tag "3.jpg", :alt => "es", :width => "16", :height=>"11" %>
 </a>
 </li>
@@ -95,14 +95,28 @@ try{if (!window.CloudFlare) { var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",mi
 <li><%= link_to "Specials", home_specials_path %></li>
 <li><%= link_to "Sitemap", home_sitemap_path %></li>
 <li><%= link_to "Contact", contact_path %></li>
+<li><%= link_to "Admin", admin_index_path %></li>
 </ul> 
 <div id="header_user">
 <ul>
 <li id="header_user_info">
+
 Welcome,
-(&nbsp;<%= link_to "Log in", login_index_path %> &nbsp;)
+<% if session[:user].present? %>
+	<%= session[:user] %>
+	(&nbsp;<%= link_to "Log out", logout_path %> &nbsp;)
+	<% else %>
+	(&nbsp;<%= link_to "Log in", login_index_path %> &nbsp;)
+<% end %>
+
 </li>
-<li id="your_account"><%= link_to "Your Account", login_my_account_path %></li>
+<li id="your_account">
+<% if session[:user].present? %>
+	<%= link_to "Your Account", login_my_account_path %>
+<% else %>
+	<%= link_to "Your Account", login_index_path %>
+  <% end %>
+</li>
 <li id="shopping_cart">
 <%= link_to "Cart:", home_order_path %>
 <span class="ajax_cart_quantity">2</span>

@@ -5,4 +5,4 @@
 # Use the database for sessions instead of the cookie-based default,
 # which shouldn't be used to store highly confidential information
 # (create the session table with "rails generate session_migration")
-Syte::Application.config.session_store :active_record_store
+Syte::Application.config.session_store :active_record_store, :expire_after=>2.minutes

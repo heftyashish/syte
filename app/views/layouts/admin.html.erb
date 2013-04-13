@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Syte</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+
+</head>
+<body id="authentication">
+
+<div id="wrapper1">
+    <!-- left menu starts -->
+                <div class="span2 main-menu-span">
+                <div class="well nav-collapse sidebar-nav">
+                    <ul class="nav nav-tabs nav-stacked main-menu">
+                        <li class="nav-header hidden-tablet">Main</li>
+
+                        <li><a class="ajax-link" href="<?php echo BASE_URL.'admin/index' ?>"><i class="icon-th"></i><span class="hidden-tablet"> Dashboard</span></a></li>
+
+
+                        <li><a class="ajax-link" href="<?php echo BASE_URL.'calendar/calendar' ?>"><i class="icon-eye-open"></i><span class="hidden-tablet"> User Details</span></a></li>
+            
+                        
+                        <li><a class="ajax-link" href="<?php echo BASE_URL.'transactions/transactiondetails' ?>"><i class="icon-home"></i><span class="hidden-tablet"> Transaction Details</span></a></li>
+                    
+                                                    
+                        <li><a href="tour.html"><i class="icon-globe"></i><span class="hidden-tablet"> Placeholder1</span></a></li>
+                        
+                        <li><a href="error.html"><i class="icon-ban-circle"></i><span class="hidden-tablet"> Placeholder2</span></a></li>
+                        <li><a href="login.html"><i class="icon-lock"></i><span class="hidden-tablet"> Placeholder3</span></a></li>
+                    
+                    </ul>
+                    
+                </div><!--/.well -->
+            </div><!--/span-->
+
+
+<div id="wrapper2">
+<div id="wrapper3">
+ 
+<%= image_tag "head-bg.png", :alt => "en", :width => "16", :height=>"11" %>
+
+</div>
+</div>
+</div>
+ 
+
+<%= yield %>
+
+
+</body>
+</html>
