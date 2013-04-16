@@ -158,6 +158,7 @@ a#header_logo {width:303px;height:199px;display:block;position:absolute;left:30p
 #header #currencies_block_top ul li a{color:#62aadb;font-size:11px;line-height:13px;text-decoration:none;display:block;}
 #header #currencies_block_top ul li:hover{ background:#62aadb;}
 #header #currencies_block_top ul li:hover a{ color:#fff;}
+#header #currencies_block_top a{ color:transparent;}
 
 
 

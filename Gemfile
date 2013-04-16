@@ -8,11 +8,14 @@ gem 'mail'
 
 gem 'sqlite3'
 
+gem 'pg'
+
 gem 'json'
 
 gem 'carrierwave'
 
 gem 'heroku'
+
 
 gem 'devise', '2.0'
 # Gems used only for assets and not required

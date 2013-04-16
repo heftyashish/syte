@@ -19,7 +19,7 @@ try{if (!window.CloudFlare) { var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",mi
 <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico"/>
 
 <script type="text/rocketscript">
-		var baseDir = 'http://livedemo00.template-help.com/prestashop_37970/';
+		var baseDir = 'http://http://localhost:3000/';
 		var static_token = '0f2c2fc31bac8e671e5384f2897a3721';
 		var token = 'e3ad06031261cb7be74c474c5220c11f';
 		var priceDisplayPrecision = 2;
@@ -42,22 +42,8 @@ try{if (!window.CloudFlare) { var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",mi
 <div id="header_right">
  
 <div id="languages_block_top">
-<ul id="first-languages">
-<li class="selected_language">
-<%= image_tag "1.jpg", :alt => "en", :width => "16", :height=>"11" %>
-</li>
-<li>
-<a href="">
-<%= image_tag "2.jpg", :alt => "fr", :width => "16", :height=>"11" %>
-</a>
-</li>
-<li>
-<a href="">
-<%= image_tag "3.jpg", :alt => "es", :width => "16", :height=>"11" %>
-</a>
-</li>
-</ul>
 </div>
+
 <script type="text/rocketscript">
 	$('ul#first-languages li:not(.selected_language)').css('opacity', 1);
 	$('ul#first-languages li:not(.selected_language)').hover(function(){
@@ -69,20 +55,22 @@ try{if (!window.CloudFlare) { var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",mi
  
  
 <div id="currencies_block_top">
-<form id="setCurrency" action="/prestashop_37970/authentication.php?back=my-account.php" method="post">
-<label>Currency:</label>
-<select onchange="setCurrency(this.value);">
-<option value="2" selected="selected">Dollar</option>
-<option value="1">Euro</option>
-<option value="3">Pound</option>
-</select>
-<input type="hidden" name="id_currency" id="id_currency" value=""/>
-<input type="hidden" name="SubmitCurrency" value=""/>
-</form>
+<label>
+Follow Us :
+</label>
+<a href="">
+<%= image_tag "facebook.png", :alt => "fr", :width => "26", :height=>"21" %>
+</a>
+
+<a href="">
+<%= image_tag "twit.png", :alt => "es", :width => "26", :height=>"21" %>
+</a>
+
+
 </div>
   
 <div id="search_block_top">
-<form method="get" action="http://livedemo00.template-help.com/prestashop_37970/search.php" id="searchbox">
+<form method="get" action="" id="searchbox">
 <label>Search</label>
 <input class="search_query" type="text" id="search_query_top" name="search_query" value="Search" onFocus="if(this.value=='Search')this.value='';" onBlur="if(this.value=='')this.value='Search';"/>
 <a href="javascript:document.getElementById('searchbox').submit();">Go!</a>
@@ -95,7 +83,6 @@ try{if (!window.CloudFlare) { var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",mi
 <li><%= link_to "Specials", home_specials_path %></li>
 <li><%= link_to "Sitemap", home_sitemap_path %></li>
 <li><%= link_to "Contact", contact_path %></li>
-<li><%= link_to "Admin", admin_index_path %></li>
 </ul> 
 <div id="header_user">
 <ul>
@@ -186,7 +173,7 @@ Welcome,
 <script type="text/rocketscript">
 		// <![CDATA[
 			// we hide the tree only if JavaScript is activated
-			$('div#categories_block_left ul.dhtml').hide();
+			// $('div#categories_block_left ul.dhtml').hide();
 		// ]]>
 		</script>
 </div>
@@ -230,7 +217,7 @@ Welcome,
 <li><a href="http://livedemo00.template-help.com/prestashop_37970/history.php">Order history</a></li>
 </ul>
 </div>
-<p>&copy; 2012 Powered by <a href="http://www.prestashop.com">PrestaShop</a>&trade;. All rights reserved</p>
+<p>add anything here</p>
 </div>
  
 <div id="newsletter_block_left" class="block">

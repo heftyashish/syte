@@ -2,16 +2,16 @@
  
 <div class="breadcrumb">
 <div class="breadcrumb_inner">
-<a href="http://livedemo00.template-help.com/prestashop_37970/" title="return to Home">Home</a><span class="navigation-pipe">&gt;</span><span class="navigation_page">Contact</span></div>
+<a href="/home" title="return to Home">Home</a><span class="navigation-pipe">&gt;</span><span class="navigation_page">Contact</span></div>
 </div>
  <h1>Customer Service - Contact us</h1>
 <p class="bold">For questions about an order or for more information about our products.</p>
-<form action="/prestashop_37970/contact-form.php" method="post" class="std" enctype="multipart/form-data">
+<form action="/contact/message" method="post" class="std" enctype="multipart/form-data">
 <fieldset>
 <h3>Send a message</h3>
 <p class="select">
 <label for="id_contact">Subject Heading</label>
-<select id="id_contact" name="id_contact" onchange="showElemFromSelect('id_contact', 'desc_contact')">
+<select id="id_contact" name="heading" onchange="showElemFromSelect('id_contact', 'desc_contact')">
 <option value="0">-- Choose --</option>
 <option value="2">Customer service</option>
 <option value="1">Webmaster</option>
@@ -26,23 +26,23 @@ If a technical problem occurs on this website
 </p>
 <p class="text">
 <label for="email">E-mail address</label>
-<input type="text" id="email" name="from" value=""/>
+<input type="text" id="email" name="email" value=""/>
 </p>
 <p class="text">
 <label for="id_order">Order ID</label>
-<input type="text" name="id_order" id="id_order" value=""/>
+<input type="text" name="orderid" id="id_order" value=""/>
 </p>
 <p class="text file_input">
 <label for="fileUpload">Attach File</label>
 <input type="hidden" name="MAX_FILE_SIZE" value="2000000"/>
-<input type="file" name="fileUpload" id="fileUpload"/>
+<input type="file" name="product" id="fileUpload"/>
 </p>
 <p class="textarea">
 <label for="message">Message</label>
 <textarea id="message" name="message" rows="15" cols="20"></textarea>
 </p>
 <p class="submit">
-<input type="submit" name="submitMessage" id="submitMessage" value="Send" class="button_large"/>
+<input type="submit" id="submitMessage" value="Send" class="button_large"/>
 </p>
 </fieldset>
 </form>
