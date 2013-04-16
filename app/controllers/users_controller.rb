@@ -2,12 +2,14 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   # before_filter :authenticate_admin!
+  layout 'admin'
   def index
     @users = User.all
-
+    puts "==========================="
     respond_to do |format|
-      format.html # index.html.erb
-      format.json { render :json => @users }
+      # format.html {redirect_to @users}  # index.html.erb
+      # format.json { render :json => @users }
+      format.js
     end
   end
 

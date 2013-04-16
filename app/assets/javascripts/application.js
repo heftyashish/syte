@@ -23,6 +23,7 @@
 //= require js/bootstrap-tooltip
 //= require js/bootstrap-popover
 //= require js/bootstrap-button
+//= require js/bootstrap-collapse
 //= require js/bootstrap-carousel
 //= require js/bootstrap-typeahead
 //= require js/bootstrap-tour
