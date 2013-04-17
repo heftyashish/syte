@@ -1,4 +1,7 @@
 Syte::Application.routes.draw do
+  
+
+
   match "/login/index" => "login#index"
   match "/login/my_account" => "login#my_account"
   match "/login/authentication" => "login#authentication"
@@ -12,10 +15,11 @@ Syte::Application.routes.draw do
   match "/admin/users" => "admin#users"
   devise_for :admins
 
+
   resources :users
   resources :home
   resources :admin
-
+  resources :products
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
