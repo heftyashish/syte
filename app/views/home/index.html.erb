@@ -52,11 +52,11 @@ $(window).load(function() {
 			<ul>
 				<% @products.each do |product| %>
 					<li class="ajax_block_product">
-					<a class="product_image" href="http://livedemo00.template-help.com/prestashop_37970/product.php?id_product=1" title="Pocket Clutch Pencil, Orange"><%= image_tag product.image_url.to_s %></a>
+					<a class="product_image" href="/home/view"><%= image_tag product.image_url.to_s %></a>
 					<div>
-						<h5><a class="product_link" href="http://livedemo00.template-help.com/prestashop_37970/product.php?id_product=1" title="Pocket Clutch Pencil, Orange"><%= product.name %></a></h5>
+						<h5><%= link_to product.name, home_view_path(product) %></h5>
 						<span class="price">Rs.<%= product.price %></span>
-						<a class="button" href="http://livedemo00.template-help.com/prestashop_37970/product.php?id_product=1" title="View">View</a>
+						<a class="button" href="/home/view" title="View">View</a>
 					</div>
 				</li>
 				<% end %>

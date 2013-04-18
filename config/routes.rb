@@ -11,6 +11,7 @@ Syte::Application.routes.draw do
   match "/home/specials" => "home#specials"
   match "/home/sitemap" => "home#sitemap"
   match "/home/order" => "home#order"
+  match "/home/view" => "home#view"
   match "/logout" => "home#logout"
   match "/admin/users" => "admin#users"
   devise_for :admins
