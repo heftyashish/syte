@@ -41,5 +41,6 @@
 //= require js/jquery.uploadify-3.1.min
 //= require js/jquery.history
 //= require js/charisma
+//= require thickbox
 
 //= require_tree .

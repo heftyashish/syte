@@ -6,14 +6,16 @@
 
 <div id="slide_holder">
 <div id="slider">
-<a href='product.php?id_product=12'><img src='assets/slide_00.jpg'alt="" title="<h2>Chip Paperclip Holder</h2><span>price:<b>Rs. 2557.00</b></span><a href='product.php?id_product=12'>SHOP NOW</a>" /></a>
+<a href='product.php?id_product=12'> <%= image_tag 'slide_00.jpg', :title=>"<h2>Chip Paperclip Holder</h2><span>price:<b>Rs. 2557.00</b></span><a href='product.php?id_product=12'>SHOP NOW</a>" %>
+</a>
                 
                             
-                    <a href='category.php?id_category=5'><img src='assets/slide_01.jpg'alt="" title="<h2>Modern Wire Holder </h2><span>price:<b>Rs.2557.00</b></span><a href='product.php?id_product=12'>SHOP NOW</a>" /></a>
-                
+<a href='product.php?id_product=12'> <%= image_tag 'slide_01.jpg', :title=>"<h2>Modern Wire Holder</h2><span>price:<b>Rs. 2557.00</b></span><a href='product.php?id_product=12'>SHOP NOW</a>" %>
+</a>
+
+<a href='product.php?id_product=12'> <%= image_tag 'slide_02.jpg', :title=>"<h2>Colored Pencil Set</h2><span>price:<b>Rs. 2557.00</b></span><a href='product.php?id_product=12'>SHOP NOW</a>" %>
+</a>
                             
-                    <a href='product.php?id_product=7'><img src='assets/slide_02.jpg'alt="" title="<h2>Colored Pencil Set</h2><span>price:<b>Rs.2557.00</b></span><a href='product.php?id_product=12'>SHOP NOW</a>" /></a>
-                
                     
 	</div>
 </div>    
@@ -52,11 +54,11 @@ $(window).load(function() {
 			<ul>
 				<% @products.each do |product| %>
 					<li class="ajax_block_product">
-					<a class="product_image" href="/home/view"><%= image_tag product.image_url.to_s %></a>
+					<a class="product_image" href= <%= product.image_url.to_s %> ><%= image_tag product.image_url.to_s, :width=> "200", :height=> "200" %></a>
 					<div>
 						<h5><%= link_to product.name, home_view_path(product) %></h5>
-						<span class="price">Rs.<%= product.price %></span>
-						<a class="button" href="/home/view" title="View">View</a>
+						<span class="price">₹ <%= product.price %></span>
+						<p class="buttons_bottom_block" > <a href="/home/view" class="button" title="View">View</a> </p>
 					</div>
 				</li>
 				<% end %>

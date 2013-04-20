@@ -1,66 +1,11 @@
 <div id="center_column" class="center_column">
-<script type="text/javascript">
-// <![CDATA[
-// PrestaShop internal settings
-var currencySign = '$';
-var currencyRate = '1';
-var currencyFormat = '1';
-var currencyBlank = '0';
-var taxRate = 0;
-var jqZoomEnabled = false;
-//JS Hook
-var oosHookJsCodeFunctions = new Array();
-// Parameters
-var id_product = '1';
-var productHasAttributes = false;
-var quantitiesDisplayAllowed = true;
-var quantityAvailable = 98;
-var allowBuyWhenOutOfStock = false;
-var availableNowValue = '';
-var availableLaterValue = '';
-var productPriceTaxExcluded = 549 - 0.000000;
-var reduction_percent = 10;
-var reduction_price = 0;
-var specific_price = 0.000000;
-var specific_currency = false;
-var group_reduction = '1';
-var default_eco_tax = 0.000000;
-var ecotaxTax_rate = 0;
-var currentDate = '2013-04-17 20:49:16';
-var maxQuantityToAllowDisplayOfLastQuantityMessage = 3;
-var noTaxForThisProduct = true;
-var displayPrice = 1;
-var productReference = '';
-var productAvailableForOrder = '1';
-var productShowPrice = '1';
-var productUnitPriceRatio = '0.000000';
-var idDefaultImage = 1;
-// Customizable field
-var img_ps_dir = 'http://livedemo00.template-help.com/prestashop_37970/img/';
-var customizationFields = new Array();
-		customizationFields[0] = new Array();
-	customizationFields[0][0] = 'img0';
-	customizationFields[0][1] = 0;
-// Images
-var img_prod_dir = 'http://livedemo00.template-help.com/prestashop_37970/img/p/';
-var combinationImages = new Array();
-combinationImages[0] = new Array();
-			combinationImages[0][0] = 1;
-			combinationImages[0][1] = 2;
-			combinationImages[0][2] = 3;
-			combinationImages[0][3] = 151;
-	// Translations
-var doesntExist = 'The combination does not exist for this product. Please choose another.';
-var doesntExistNoMore = 'This product is no longer in stock';
-var doesntExistNoMoreBut = 'with those attributes but is available with others';
-var uploading_in_progress = 'Uploading in progress, please wait...';
-var fieldRequired = 'Please fill in all required fields, then save the customization.';
-//]]>
-</script>
+  <%= stylesheet_link_tag    "thickbox", :media => "screen" %>
+  <%= javascript_include_tag "jquery-1.2.6" %>
+  <%= javascript_include_tag "thickbox" %>
  
 <div class="breadcrumb">
 <div class="breadcrumb_inner">
-<a href="http://livedemo00.template-help.com/prestashop_37970/" title="return to Home">Home</a><span class="navigation-pipe">&gt;</span><span class="navigation_end"><%= @product.name %></span></div>
+<a href="/home" title="return to Home">Home</a><span class="navigation-pipe">&gt;</span></div>
 </div>
  <div id="primary_block" class="clearfix">
 <h1><%= @product.name %></h1>
@@ -68,46 +13,25 @@ var fieldRequired = 'Please fill in all required fields, then save the customiza
 <div id="pb-right-column">
  
 <div id="image-block">
-<img src="http://livedemo00.template-help.com/prestashop_37970/img/p/1-1-large.jpg" title="Pocket Clutch Pencil, Orange" alt="Pocket Clutch Pencil, Orange" id="bigpic" width="300" height="300"/>
+	<a href=<%= @product.image_url.to_s %> class="thickbox">
+<%= image_tag @product.image_url.to_s, :width=> "300", :height=> "300", :id=> "bigpic" %>
+</a>
+</div>
+</div>
+
 </div>
  
 <div id="pb-left-column">
 <div id="short_description_block">
-<div id="short_description_content" class="rte align_justify"> Vivamus pellentesque pretium dolor, et pretium elit sagittis in. Duis at enim et magna ultricies viverra. Sed euismod urna non tortor aliquam non tincidunt purus sagittis. Integer lectus orci, placerat ut ultrices vestibulum, porta ut augue. Maecenas eu consectetur diam. Curabitur faucibus congue luctus. Mauris purus metus, faucibus non placerat at, posuere vel ante. </div>
-<p class="buttons_bottom_block"><a href="javascript:{}" class="button">More details</a></p>
+<div id="short_description_content" class="rte align_justify"><%= @product.description %></div>
 </div>
- 
-<form id="buy_block" action="http://livedemo00.template-help.com/prestashop_37970/cart.php" method="post">
- 
-<p class="hidden">
-<input type="hidden" name="token" value="0f2c2fc31bac8e671e5384f2897a3721"/>
-<input type="hidden" name="id_product" value="1" id="product_page_product_id"/>
-<input type="hidden" name="add" value="1"/>
-<input type="hidden" name="id_product_attribute" id="idCombination" value=""/>
-</p>
- 
+  
 <p class="price">
 <span class="on_sale">On sale!</span>
 <span class="our_price_display">
-<span id="our_price_display" class="price"><%= @product.price %></span>
+<span id="our_price_display" class="price">₹ <%= @product.price %></span>
 </span>
 </p>
-<div id="other_prices">
-<p id="old_price">
-<span id="old_price_display">$549.00</span>
-tax excl. </p>
-<p id="reduction_percent">(price reduced by <span id="reduction_percent_display">10</span> %)</p>
-</div>
-<p id="product_reference" style="display:none;"><label for="product_reference">Reference: </label><span class="editable"></span></p>
- 
-<p id="quantity_wanted_p">
-<label>Quantity:</label>
-<input type="text" name="qty" id="quantity_wanted" class="text" value="1" size="2" maxlength="3"/>
-</p>
- 
-<p id="minimal_quantity_wanted_p" style="display: none;">You must add<b id="minimal_quantity_label">1</b>as a minimum quantity to buy this product.</p>
- 
-<p id="availability_statut" style="display:none;">
 <span id="availability_label">Availability:</span>
 <span id="availability_value">
 </span>
@@ -118,57 +42,13 @@ tax excl. </p>
 <span style="display:none;" id="quantityAvailableTxt">item in stock</span>
 <span id="quantityAvailableTxtMultiple">items in stock</span>
 </p>
- 
-<p id="oosHook" style="display: none;">
-</p>
-<p id="last_quantities" style="display:none;">Warning: Last items in stock!</p>
-<p class="online_only">Online only!</p> <p id="add_to_cart" class="buttons_bottom_block">
-<a class="exclusive" href="javascript:document.getElementById('add2cartbtn').click();">Add to cart</a>
-<input id="add2cartbtn" type="submit" name="Submit" value="Add to cart"/>
-</p>
+<h2>Comments</h2>
+<%= render @product.comments %>
+<div id="ajax-comments">
+	</div>
+<h2>Add a comment:</h2>
+<%= render "comments/form" %>
 <div class="clearblock"></div>
-</form>
 </div>
 </div>
  
-<div id="more_info_block" class="clear">
-<ul id="more_info_tabs" class="idTabs idTabsShort">
-<li><a id="more_info_tab_more_info" href="#idTab1">More info</a></li>
-<li><a href="#idTab5" class="idTabHrefShort">Comments (0)</a></li>
-</ul>
-<div id="more_info_sheets" class="tabs_content">
- 
-<div id="idTab1"><p>Etiam leo felis, porttitor a ultricies nec, iaculis ac quam. Aliquam in lectus et nibh laoreet congue. Curabitur eget est orci. Ut nisl lacus, elementum et congue eu, luctus a quam. Vestibulum et quam vitae turpis dignissim dictum. Cras rhoncus libero ut turpis pretium tincidunt. Vestibulum at imperdiet quam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p></div>
- 
-<ul id="idTab2" class="bullet">
-<li><span>Width</span> 10&quot;</li>
-<li><span>Height</span> 15&quot;</li>
-<li><span>Depth</span> 10&quot;</li>
-<li><span>Weight</span> 0.5 kg</li>
-<li><span>Size</span> L</li>
-</ul>
- 
-<div id="idTab5">
-<script type="text/javascript" src="/prestashop_37970/modules/productcomments/js/jquery.rating.pack.js"></script>
-<script type="text/javascript">
-	$(function(){ $('input[@type=radio].star').rating(); });
-	$(function(){
-		$('.auto-submit-star').rating({
-			callback: function(value, link){
-			}
-		});
-	});
-	
-	//close  comment form
-	function closeCommentForm(){
-		$('#sendComment').slideUp('fast');
-		$('input#addCommentButton').fadeIn('slow');
-	}
-</script>
-<p class="align_center">No customer comments for the moment.</p>
-<p class="align_center">Only registered users can post a new comment.</p>
-</div>
-</div>
-</div>
- 
-</div>
