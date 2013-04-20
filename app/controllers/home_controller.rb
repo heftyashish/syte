@@ -16,9 +16,10 @@ class HomeController < ApplicationController
 	end
 
 	def view
+		
 	    @product= Product.find(params[:format])
-	    # logger.info "================================"
-	    # logger.info params[:product_id]
+	    logger.info "================================"
+	    logger.info @product.inspect
 	end
 
 	def logout

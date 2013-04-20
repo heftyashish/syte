@@ -2,8 +2,7 @@ class CommentsController < ApplicationController
 	def create
 		@product = Product.find(params[:product_id])
 		@comment = @product.comments.create(params[:comment])
-		puts "=================================="
-		puts @product.comments
+
 		respond_to do |format|
     		format.js
 		end
@@ -15,4 +14,5 @@ class CommentsController < ApplicationController
     @comment.destroy
     redirect_to home_view_path(@product)
   end	
+
 end
