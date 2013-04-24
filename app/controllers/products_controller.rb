@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
+  # http_basic_authenticate_with name:"admin", password: "secret"
   layout 'admin'
   def index
     @products = Product.all
