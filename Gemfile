@@ -6,8 +6,6 @@ gem 'rails', '3.2.10'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem 'mail'
 
-gem 'sqlite3'
-
 gem 'pg'
 
 gem 'json'
