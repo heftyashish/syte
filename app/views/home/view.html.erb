@@ -2,7 +2,7 @@
   <%= stylesheet_link_tag    "thickbox", :media => "screen" %>
   <%= javascript_include_tag "jquery-1.2.6" %>
   <%= javascript_include_tag "thickbox" %>
- 
+
 <div class="breadcrumb">
 <div class="breadcrumb_inner">
 <a href="/home" title="return to Home">Home</a><span class="navigation-pipe">&gt;</span></div>
@@ -42,6 +42,7 @@
 <span style="display:none;" id="quantityAvailableTxt">item in stock</span>
 <span id="quantityAvailableTxtMultiple">items in stock</span>
 </p>
+<%= link_to "Add to cart", cart_path(@product), :class=>'exclusive' %>
 <h2>Comments</h2>
 <%= render @product.comments %>
 <div id="ajax-comments">
