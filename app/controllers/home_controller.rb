@@ -12,7 +12,11 @@ class HomeController < ApplicationController
 	end
 
 	def order
-		
+		if session[:user].present?
+			redirect_to cart_display_path
+		else
+			redirect_to login_index_path
+		end
 	end
 
 	def view

@@ -13,13 +13,13 @@ try{if (!window.CloudFlare) { var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",mi
 <script type="text/rocketscript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);</script>
 <title>Authentication - Stationery</title>
 <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
-<meta name="generator" content="PrestaShop"/>
+<meta name="generator" content="stationery"/>
 <meta name="robots" content="index,follow"/>
 <link rel="icon" type="image/vnd.microsoft.icon" href="assets/favicon.ico"/>
 <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico"/>
 
 <script type="text/rocketscript">
-		var baseDir = 'http://livedemo00.template-help.com/';
+		var baseDir = 'http://localhost:3000.com/';
 		var static_token = '0f2c2fc31bac8e671e5384f2897a3721';
 		var token = 'e3ad06031261cb7be74c474c5220c11f';
 		var priceDisplayPrecision = 2;
@@ -59,11 +59,11 @@ try{if (!window.CloudFlare) { var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",mi
 Follow Us :
 </label>
 <a href="https://www.facebook.com/KRStationers">
-<%= image_tag "facebook.png", :alt => "fr", :width => "26", :height=>"21" %>
+<%= image_tag "facebook.png", :alt => "fb", :width => "26", :height=>"21" %>
 </a>
 
 <a href="">
-<%= image_tag "twit.png", :alt => "es", :width => "26", :height=>"21" %>
+<%= image_tag "twit.png", :alt => "tw", :width => "26", :height=>"21" %>
 </a>
 
 
@@ -105,8 +105,14 @@ Welcome,
   <% end %>
 </li>
 <li id="shopping_cart">
-<%= link_to "Cart:", home_order_path %>
-<span class="ajax_cart_quantity">2</span>
+<%= link_to "Cart:", cart_display_path %>
+<span class="ajax_cart_quantity">
+	<% if session[:user].present? %>
+		<%= session[:cart_items] %>
+	<% else %>
+	<%= 0 %>
+	<% end %>
+	</span>
 <span class="ajax_cart_product_txt hidden">product</span>
 <span class="ajax_cart_product_txt_s">products</span>
 <span class="ajax_cart_no_product hidden">empty</span>
@@ -115,7 +121,7 @@ Welcome,
 </div>
   
 <div class="tmbanner1">
-<a href="/product/action?id_product=1" title="free shipping">
+<a href="" title="free shipping">
 <%= image_tag "advertising.jpg", :title => "free shipping", :alt=>  "free shipping" %>
 </a>
 </div>

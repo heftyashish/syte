@@ -4,11 +4,15 @@ class LoginController < ApplicationController
 	end
 
 	def enter
-		@user=User.where(:email=>params[:email],:password=>params[:password])
-		if @user.empty?
+		user=User.where(:email=>params[:email],:password=>params[:password])
+
+		if user.empty?
 			redirect_to login_index_path
 		else
-			session[:user]=params[:firstname]
+
+			session[:user]=user.pluck(:firstname)
+			# logger.info "++++++++++++++++++++++++++++"
+			# logger.info user.pluck(:firstname)		
 			render 'my_account.html.erb'
 		end
 	end
@@ -33,8 +37,9 @@ class LoginController < ApplicationController
 
 		@user= User.new(params)
 		@user.save!
+		
 		session[:user]=params[:firstname]
-		# UserMailer.welcome_email(@user).deliver
+		UserMailer.welcome_email(@user).deliver
 		rescue ActiveRecord::RecordInvalid => e
 		 flash[:notice]=@user.errors.full_messages
 		 # @user.errors.full_messages.each do |message|

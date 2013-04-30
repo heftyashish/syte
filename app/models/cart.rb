@@ -1,13 +1,14 @@
 class Cart < ActiveRecord::Base
   attr_accessible  :description, :price, :name
 
-  	def paypal_url(return_url)
+  	def paypal_url(return_url, notify_url)
 	  values = {
 	    :business => 'bigwig@in.com',
 	    :cmd => '_cart',
 	    :upload => 1,
 	    :return => return_url,
-	    :invoice => id
+	    :invoice => id,
+	    :notify_url => notify_url
 	  }
 	  items=Cart.all
 	  items.each_with_index do |item, index|

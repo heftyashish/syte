@@ -122,7 +122,7 @@ Total:
 
 </div>
 <p class="cart_navigation">
-<%= link_to 'Checkout', @cart.paypal_url(home_index_url), :class=>"exclusive", :title=>"Checkout",:method=>:post %>
+<%= link_to 'Checkout', @cart.paypal_url(home_index_url, notification_url), :class=>"exclusive", :title=>"Checkout",:method=>:post %>
 <a href="/home" class="button_large" title="Continue shopping">&laquo; Continue shopping</a>
 </p>
 </div>

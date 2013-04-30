@@ -1,3 +1,4 @@
+<!-- Underway -->
 <div id="center_column" class="center_column">
  
 <div class="breadcrumb">
@@ -13,7 +14,7 @@ $(document).ready(function()
 {
 	$('#selectPrductSort').change(function()
 	{
-		var requestSortProducts = '/prestashop_37970/prices-drop.php';
+		var requestSortProducts = '/home/prices-drop';
 		var splitData = $(this).val().split(':');
 
 
@@ -25,7 +26,7 @@ $(document).ready(function()
 //]]>
 
 </script>
-<form id="productsSortForm" action="/prestashop_37970/prices-drop.php">
+<form id="productsSortForm" action="/home/prices-drop">
 <select id="selectPrductSort">
 <option value="position:asc" selected="selected">--</option>
 <option value="price:asc">Price: lowest first</option>
@@ -40,7 +41,7 @@ $(document).ready(function()
  
 <ul id="product_list" class="clear">
 <li class="ajax_block_product first_item item clearfix">
-<a href="" class="product_img_link" title="2-hole punch 0102"><img src="http://livedemo00.template-help.com/prestashop_37970/img/p/9-25-home.jpg" alt="2-hole punch 0102" width="218" height="205"/></a>
+<a href="" class="product_img_link" title="2-hole punch 0102"><img src="" alt="2-hole punch 0102" width="218" height="205"/></a>
 <div class="center_block">
 <div class="product_flags">
 <span class="new">New</span> <span class="availability">Available</span> </div>
@@ -49,7 +50,7 @@ $(document).ready(function()
 </div>
 <div class="right_block">
 <span class="discount">Reduced price!</span>
-<span class="price">$203.00</span> <a class="exclusive ajax_add_to_cart_button" rel="ajax_id_product_9" href="" title="Add to cart">Add to cart</a>
+<span class="price">Rs. 203.00</span> <a class="exclusive ajax_add_to_cart_button" rel="ajax_id_product_9" href="" title="Add to cart">Add to cart</a>
 <a class="button" href="" title="View">View</a>
 </div>
 </li>

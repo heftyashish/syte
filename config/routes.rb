@@ -15,6 +15,8 @@ Syte::Application.routes.draw do
   match "/logout" => "home#logout"
   match "/admin/users" => "admin#users"
   match "/cart" => "cart#index"
+  match "/cart/display" => "cart#display"
+  match "/notification" =>"payment_notification#create"
   devise_for :admins
 
 
