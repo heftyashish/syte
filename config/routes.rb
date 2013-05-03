@@ -10,7 +10,6 @@ Syte::Application.routes.draw do
   match "/contact/message" => "contact#message"
   match "/home/specials" => "home#specials"
   match "/home/sitemap" => "home#sitemap"
-  match "/home/order" => "home#order"
   match "/home/view" => "home#view"
   match "/logout" => "home#logout"
   match "/admin/users" => "admin#users"

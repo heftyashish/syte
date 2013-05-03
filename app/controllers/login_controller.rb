@@ -39,7 +39,7 @@ class LoginController < ApplicationController
 		@user.save!
 		
 		session[:user]=params[:firstname]
-		UserMailer.welcome_email(@user).deliver
+		# UserMailer.welcome_email(@user).deliver
 		rescue ActiveRecord::RecordInvalid => e
 		 flash[:notice]=@user.errors.full_messages
 		 # @user.errors.full_messages.each do |message|
